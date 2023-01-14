@@ -1,0 +1,64 @@
+<html>
+<body>
+	<div id='background'>
+        <div id='character' style='position:absolute; top:100px; left:450px; background-image: url("img/down1.png"); width:59px; height:86px;'></div>
+    </div>
+
+	<!--Aquí empieza lo que se trabaja en la consola (incluso cambia la forma de comentar)-->
+    <script type="text/javascript">
+	    var leftValue = 450, topValue = 100, direction = 'down', step = 1;
+
+    	function update(){
+    		document.getElementById("character").style.left = leftValue+"px";
+    		document.getElementById("character").style.top = topValue+"px";
+			document.getElementById("character").style.backgroundImage = "url('img/"+direction+step+".png')";
+    	}
+
+    	document.onkeydown = function(e){
+    		console.log(e);
+    		if(e.keyCode == 37 && leftValue > 0) { // LEFT
+    			leftValue = leftValue - 10;
+				if (direction=='left' && step == 1) {
+					step = 2;
+				}
+				else {
+					step = 1;
+				}
+				direction='left'
+    		}
+    		else if (e.keyCode == 39 && leftValue < 500) { // RIGHT
+    			leftValue = leftValue + 10;    
+				if (direction=='right' && step == 1) {
+					step = 2;
+				}
+				else {
+					step = 1;
+				}
+				direction='right'		
+			}
+    		else if (e.keyCode == 40 && topValue < 500) { // DOWN
+				topValue = topValue + 10;
+				if (direction=='down' && step == 1) {
+					step = 2;
+				}
+				else {
+					step = 1;
+				}
+				direction='down'
+    		}
+			else if (e.keyCode == 38 && topValue > 0) { // Hacia arriba (se observa en el detalle de la consola, tecla 38 "keycode")
+				topValue = topValue - 10; // El número (450) indica qué tan alejado está desde arriba; mientras que el otro indica alejamiento desde la izquierda
+				if (direction=='top' && step == 1) {
+					step = 2;
+				}
+				else {
+					step = 1;
+				}
+				direction='top'
+			}
+    		// ...
+    		update();
+    	}
+    </script>
+</body>
+</html>

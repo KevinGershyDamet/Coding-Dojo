@@ -1,0 +1,272 @@
+<html>
+<head>
+    <title>Ninja Man</title>
+    <style type="text/css">
+    *{
+        margin: 0;
+        padding: 0;
+    }
+        .row{
+            line-height: 0;
+        }
+        .wall {
+            background-color: blue; 
+            height: 40px; 
+            width: 40px;
+            display: inline-block;
+        }
+        .sushi {
+            background-color: black; 
+            height: 40px; 
+            width: 40px;
+            display: inline-block;
+            background-image: url('sushi.png');
+            background-size: contain;
+        }
+        .onigiri {
+            background-color: black; 
+            height: 40px; 
+            width: 40px;
+            display: inline-block;
+            background-image: url('onigiri.png');
+            background-size: contain;
+        }
+        .blank {
+            background-color: black; 
+            height: 40px; 
+            width: 40px;
+            display: inline-block;
+        }
+        #ninjaman {
+            background-color: black; 
+            height: 40px; 
+            width: 40px;
+            display: inline-block;
+            background-image: url('ninja.gif');
+            background-size: contain;
+            position: absolute;
+            left: 40px;
+            top: 40px;
+        }
+        #ghost {
+            background-color: black; 
+            height: 40px; 
+            width: 40px;
+            display: inline-block;
+            background-image: url('red.gif');
+            background-size: contain;
+            position: absolute;
+            left: 120px;
+            top: 120px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <!--Esta es la forma "arcaica" de dibujar el mundo-->
+    <div id='world'>
+        <!--
+        <div class = 'row'>
+            <div class = 'wall'></div>
+            <div class = 'blank'></div>
+            <div class = 'sushi'></div>
+            <div class = 'wall'></div>
+            <div class = 'wall'></div>
+        </div>
+        <div class = 'row'>
+            <div class = 'wall'></div>
+            <div class = 'wall'></div>
+            <div class = 'wall'></div>
+            <div class = 'wall'></div>
+            <div class = 'wall'></div>
+        </div>
+        <div class = 'row'>
+            <div class = 'wall'></div>
+            <div class = 'wall'></div>
+            <div class = 'wall'></div>
+            <div class = 'wall'></div>
+            <div class = 'wall'></div>
+        </div>
+        <div class = 'row'>
+            <div class = 'wall'></div>
+            <div class = 'wall'></div>
+            <div class = 'wall'></div>
+            <div class = 'wall'></div>
+            <div class = 'wall'></div>
+        </div>
+    -->        
+    </div>
+    <div id='ninjaman'></div>
+    <div id='ghost'></div>
+    <div id='puntaje'></div>
+    <div id='lifes'></div>
+        
+</body>
+
+<!--Aquí en cambio dibujamos el mundo usando javascript-->
+<script type="text/javascript">
+
+    //Aquí la parte en donde se crea el mundo aleatorio
+
+    function dice(min,max) {
+        output = Math.round(Math.random()*(max-min))+min;
+        return output 
+    }
+
+    var alto = dice(5,20) , ancho = dice(5,20); // Tamaño del mundo
+
+    function createRandomWorld (a,b) {
+    var mundo = [];
+        
+        for (var i = 0 ; i < a ; i++) {
+            mundo.push();
+            mundo[i] = new Array(b)
+        }
+        
+        for (var i = 0 ; i < a ; i++) {
+        for (var j = 0 ; j < b ; j++) {
+            if (i == 0 || j == 0 || i == a-1 || j == b-1) {
+                mundo[i][j] = 0;
+            }
+            else {
+                var rnd = Math.random();
+                if (rnd > 0.6) { // Permite reducir el número de elementos en el espacio
+                mundo[i][j] = dice(0,3);
+                }
+                else {
+                mundo[i][j] = 1 ;
+                }
+            }
+        }
+        }
+
+        return mundo
+    }
+    
+    var world = createRandomWorld(alto,ancho);
+
+    // Fin de la creación del mundo aleatorio
+    
+    //var world = [ [0,0,0,0,0], [0,1,2,2,0], [0,3,2,0,0], [0,3,2,2,0], [0,1,1,1,0], [0,0,0,0,0]];
+    var worldDictionary = {
+        0: 'wall',
+        1: 'blank',
+        2: 'sushi',
+        3: 'onigiri'
+    }
+
+    function drawWorld() {
+        output = "";
+
+        for (var row =0; row < world.length; row++) {
+            output += "<div class = 'row'></div>"
+                for (var x=0; x < world[row].length; x++) {
+                    output += "<div class = '" + worldDictionary[world[row][x]] + "'></div>";
+                }
+                output += "</div>";
+        }
+
+        document.getElementById('world').innerHTML = output;
+    }
+
+    drawWorld();
+
+    var ninjaman = {
+        x: 1, 
+        y: 1,
+    }
+
+    function drawNinjaman() {
+        document.getElementById('ninjaman').style.top = ninjaman.y * 40 + 'px'
+        document.getElementById('ninjaman').style.left = ninjaman.x * 40 + 'px'
+    }
+
+    drawNinjaman();
+
+    var ghost = {
+        x: dice(0,ancho-1), 
+        y: dice(0,alto-1),
+    }
+
+    function drawGhost() {
+        document.getElementById('ghost').style.top = ghost.y * 40 + 'px'
+        document.getElementById('ghost').style.left = ghost.x * 40 + 'px'
+    }
+
+    drawGhost();
+
+    var score = 0;
+    var vidas = 3;
+
+    document.onkeydown = function(e) {
+
+        if (e.keyCode == 37 && world[ninjaman.y][ninjaman.x-1] != 0) { //left
+            ninjaman.x--;
+        }
+        if (e.keyCode == 39 && world[ninjaman.y][ninjaman.x+1] != 0) { //right
+            ninjaman.x++;
+        }
+        if (e.keyCode == 38 && world[ninjaman.y-1][ninjaman.x] != 0) { //up
+            ninjaman.y--;
+        }
+        if (e.keyCode == 40 && world[ninjaman.y+1][ninjaman.x] != 0) { //down
+            ninjaman.y++;
+        }
+        
+        var eaten = world[ninjaman.y][ninjaman.x];
+            if (eaten==3) {
+                score += 5 
+            }
+            if (eaten==2) {
+                score +=10
+            }
+
+        world[ninjaman.y][ninjaman.x] = 1 ;
+        
+
+        // Agregamos el fantasma
+       
+        var step = dice(1,4)
+        if (step==1 && ghost.x < ancho-1) {
+            ghost.x++;
+        }
+        else if (step==2 && ghost.x > 0) {
+            ghost.x--;
+        }
+        else if (step==3 && ghost.y > 0) {
+            ghost.y--;
+        }
+        else if (step==4 && ghost.y < alto-1) {
+            ghost.y++;
+        }
+        
+
+        // Condicional para reiniciar el juego
+
+        if (ghost.x == ninjaman.x && ghost.y == ninjaman.y ) {
+            vidas--;
+            ninjaman.x = 1, ninjaman.y = 1;
+            ghost.x = dice(0,ancho-1) , ghost.y = dice(0,alto-1)
+        }
+
+        drawNinjaman();
+        drawWorld();
+        drawGhost();
+
+
+    document.getElementById('puntaje').innerHTML = 'Puntos acumulados por Ponji: ' + score; // Esto debe ir adentro de la función ya que sino, es como si no se acumulara el valor del score
+    document.getElementById('lifes').innerHTML = 'Intentos restantes: ' + vidas;
+
+    }
+
+
+
+    
+
+
+    // crear fantasmas
+
+</script>
+
+</html>
