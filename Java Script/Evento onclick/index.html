@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojonary</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    
+    <div id="encabezado">
+        <h1>Dojonary</h1>
+        <input type="text" placeholder="Search">
+        <button id="sesion" onclick="login_out(this)">Login</button>
+    </div>
+
+    <div id="cuerpo">
+        <div id="panel_izquierdo">
+            <div class="bloque">
+                <div class="izq_bloque">
+                    <p class="palabra">ninja</p>
+                    <p class="categoria">noun</p>
+                    <p class="plural">Plural: <span class="el_plural">ninjas</span></p>
+                    <button class="likes" onclick="alert('Ninja was liked')">13 likes</button>
+                </div>
+
+                <p class="definicion">A practitioner skilled in the <br><span class="enfasis">Japanese</span> art of <span class="enfasis">ninjutsu</span></p>
+            </div>
+
+            <div class="bloque">
+                <div class="izq_bloque">
+                    <p class="palabra">ninja</p>
+                    <p class="categoria">noun</p>
+                    <p class="plural">Plural: <span class="el_plural">ninjas</span></p>
+                    <button class="likes" onclick="alert('Ninja was liked')">37 likes</button>
+                </div>
+
+                <p class="definicion">A <span class="enfasis">programmer</span> who breaks <br>down problems with <span class="enfasis">zen</span>-like <br>focus</p>
+            </div>
+        </div>
+
+        <div id="panel_derecho">
+            <p id="motivacion">Dojonary is <br>defined by <span id="you">YOU</span></p>
+            <button id="añadir" onclick="desaparece(this)">Add Definition</button>
+        </div>
+    </div>
+
+</body>
+</html>

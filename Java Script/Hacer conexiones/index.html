@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    
+    <div class="nav">
+        
+        <h1 class="nav-title">Perfil</h1>
+
+        <div class="sub-nav">
+            <ul class="nav-links">
+                <li>Inicio</li>
+                <li class="active">Mi perfil</li>
+                <li>Encontrar conexiones</li>
+                
+            </ul>
+
+            <button class="btn">Cerrar sesión</button>
+        </div>
+
+    </div>
+
+    <div class="pagina">
+        
+        <div class="panel-izquierdo">
+            
+            <div class="tarjeta">
+                <img class="perfil" src="user-circle.png" alt="ícono de perfil">
+                
+                <div class="cabecera-resumen"></div>
+
+                <div class="cuerpo-resumen">
+                    <h1 id="nombre">Kevin Gershy-Damet</h1>
+                    
+                    <div class="lugar">
+                        <img class="icono" id="lugar" src="map-marker.png" alt="ícono de lugar">
+                        <label class="descripcion">Lima</label>
+                    </div>
+
+                    <p class="descripcion">Economista | Músico | Futuro programador <br> Apasionado de la música y de las matemáticas</p>
+
+                    <div class="ajustes">
+                        <img class="icono" src="gear.png" alt="ícono de ajustes">
+                        <label class="texto_ajustes" onclick="cambiar_nombre()">editar perfil</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bloque">
+
+                <div class="cabecera">
+                    <h1>Educación</h1>
+                </div>
+
+                <div class="cuerpo">
+                    <ul class="educacion">
+                        <li><p class="centro_estudios">Coding Dojo</p><p class="curso">Python Full-Stack Bootcamp</p><p class="fechas">Dic 2022 - Abr 2023</p></li>
+                        <li><p class="centro_estudios">Universidad del Pacífico</p><p class="curso">Licenciatura y Maestría en Economía</p><p class="fechas">Ene 2012 - Jul 2018</p></li>
+                        <li><p class="centro_estudios">Banco Central de Reserva del Perú</p><p class="curso">Curso de Extensión de Economía Avanzada</p><p class="fechas">Ene 2017 - Mar 2017</p></li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="panel-derecho">
+
+            <div class="bloque">
+                
+                <div class="cabecera">
+                    <div id="circulo_2">2</div>
+                    <h2>Solicitudes de conexión</h2>
+                </div>
+
+                <div class="cuerpo">
+                    <ul class="solicitudes">
+                        <li class="solicitud_1"><img class="imagen_usuario" src="todd-s.jpg" alt="imagen de usuario">Todd E</li>
+                        <li class="solicitud_2"><img class="imagen_usuario" src="phil-s.jpg" alt="imagen de usuario">Phil K</li>
+                    </ul>
+                
+                    <ul class="decision">
+                        <li class="solicitud_1"><img src="accept-circle.png" alt="aceptar1" onclick="eliminar_solicitud(this)"><img src="close-circle.png" alt="rechazar1" onclick="eliminar_solicitud(this)"></li>
+                        <li class="solicitud_2"><img src="accept-circle.png" alt="aceptar2" onclick="eliminar_solicitud(this)"><img src="close-circle.png" alt="rechazar2" onclick="eliminar_solicitud(this)"></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="bloque">
+
+                <div class="cabecera">
+                    <div id="circulo_500">418</div>
+                    <h2>Mis conexiones</h2>
+                </div>
+
+                <div class="cuerpo">
+                    <ul class="contactos">
+                        <li><img class="imagen_usuario" src="adrien-s.jpg" alt="imagen de usuario">Adrien D</li>
+                        <li><img class="imagen_usuario" src="anne-s.jpg" alt="imagen de usuario">Anne J</li>
+                        <li><img class="imagen_usuario" src="alayne-s.jpg" alt="imagen de usuario">Alayne T</li>
+                        <li><img class="imagen_usuario" src="arry-s.jpg" alt="imagen de usuario">Arry Y</li>
+                    </ul>
+                </div>
+                <div id="otros_contactos">Ver más</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

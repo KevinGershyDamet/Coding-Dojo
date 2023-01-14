@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="encabezado">Network</div>
+    
+    <h1>Your Feed</h1>
+
+    <div id="cuerpo">
+        <div id="avatar">
+            <img src="user-circle.png" alt="icono de perfil">
+            <p class="texto_azul">Add an avatar</p>
+            <p class="nombre">James Doe</p>
+        </div>
+
+        <div id="paneles_derechos">
+            <div class="panel">
+                <div class="top">
+                    <p class="nombre">Neil M</p>
+                    <div class="likes">
+                        <p class="num_likes">9 like(s)</p>
+                        <button id="boton_1" onclick="actualizar_likes(this)">Like</button>
+                    </div>
+                </div>
+
+                <p class="descripcion">I just set up this new discord bot, let me know what you all think. <span class="texto_azul">link</span></p>
+            </div>
+
+            <div class="panel">
+                <div class="top">
+                    <p class="nombre">Nichole K</p>
+                    <div class="likes">
+                        <p class="num_likes">12 like(s)</p>
+                        <button id="boton_2" onclick="actualizar_likes(this)">Like</button>
+                    </div>
+                </div>
+
+                <p class="descripcion">Just finished my <span class="texto_azul">next comic</span>, check it out.</p>
+            </div>
+
+            <div class="panel">
+                <div class="top">
+                    <p class="nombre">Jim R</p>
+                    <div class="likes">
+                        <p class="num_likes">9 like(s)</p>
+                        <button id="boton_3" onclick="actualizar_likes(this)">Like</button>
+                    </div>
+                </div>
+
+                <p class="descripcion">I can't stop listening to the <span class="texto_azul">new album</span>. Who else is liking it?</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

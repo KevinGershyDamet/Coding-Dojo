@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="encabezado">
+        <h1>DojoWeather</h1>
+        <ul id="ciudades">
+            <li onclick="alert('Loading weather report...')">Burbank</li>
+            <li onclick="alert('Loading weather report...')">Chicago</li>
+            <li onclick="alert('Loading weather report...')">Dallas</li>
+        </ul>
+    </div>
+
+    <div id="sub_encabezado">
+        <h1>San Jose</h1>
+        <div #temperatura>
+            <label class="texto">show temperature in</label>
+            <select name="grados" id="grados" onchange="convertir(this)">
+                <option>°C</option>
+                <option>°F</option>
+                <option>°K</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="estados">
+        <div class="bloque">
+            <h1>Today</h1>
+            <img src="some_rain.png" alt="clima">
+            <p class="texto">some rain</p>
+            <div class="temperaturas">
+                <p class="caliente temp">24°</p>
+                <p class="frio temp">18°</p>
+            </div>
+        </div>
+
+        <div class="bloque">
+            <h1>Tomorrow</h1>
+            <img src="some_sun.png" alt="clima">
+            <p class="texto">some sun</p>
+            <div class="temperaturas">
+                <p class="caliente temp">27°</p>
+                <p class="frio temp">19°</p>
+            </div>
+        </div>
+
+        <div class="bloque">
+            <h1>Friday</h1>
+            <img src="some_clouds.png" alt="clima">
+            <p class="texto">some clouds</p>
+            <div class="temperaturas">
+                <p class="caliente temp">21°</p>
+                <p class="frio temp">16°</p>
+            </div>
+        </div>
+
+        <div class="bloque">
+            <h1>Saturday</h1>
+            <img src="some_sun.png" alt="clima">
+            <p class="texto">some sun</p>
+            <div class="temperaturas">
+                <p class="caliente temp">26°</p>
+                <p class="frio temp">21°</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="aviso_cookie">
+        <img src="cookie.png" alt="cookie">
+        <div id="mensaje_cookie">
+            <h2>Stop! Cookie time</h2>
+            <p>We use cookies (sadly not the edible ones) to personalize content and ads, to provide social media features and to analyse our traffic. <span>Read more...</span></p>
+        </div>
+        <button onclick="hide()">I Accept</button>
+    </div>
+</body>
+</html>

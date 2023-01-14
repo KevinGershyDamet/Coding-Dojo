@@ -1,0 +1,114 @@
+<!DOCTYPE html> <!--Se incluye esta línea para identificar que es HTML, que es un sublenguaje de XML. Esto hace necesario identificar HTML. Aunque los navegadores inteligentes (nuevos) sí reconocen que son páginas web-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--Head describe los metadatos de la página. Solo el título es visible (encabezado de la pestaña)-->
+    <!--Con Alt+Z se comprime la línea-->
+</head>
+<body>
+    <h1>Hello World</h1>
+    <p>Este es un párrafo normal</p>
+    <a href="http://codingdojo.com">Home</a> <!--Home es cómo se ve el hipervínculo-->
+    <!--Atributo: la página que se muestra. Propiedad de una etiqueta-->
+    <img src="Images\player.png" alt="image of a plane"> <!--Etiqueta autocontenida / no puede contener nada adentro-->
+    <!--Lo segundo indica cómo se ve si no se puede ver la imagen, o si el lector ver el archivo como texto-->
+    <!--No se puede hacer alusión directa a imágenes o archivos de otra carpeta en el entorno
+    Sin embargo, se hace click, copiar relative path-->
+    <p><em>Este</em> es un <strong>ejemplo!</strong></p>
+    <!--em para cursiva, strong para negritas-->
+
+    <ul>
+        <li>Perro</li> 
+        <li>Gato</li>
+        <li>Dragón</li>
+        <li>Mono</li>
+    </ul>
+    <!--Lista de elementos-->
+
+    <ol>
+        <li>Dog</li>
+        <li>Cat</li>
+        <li>Dragon</li>
+        <li>Monkey</li>
+    </ol>
+    <!--Con numeración-->
+    
+    <table>
+        <tr>
+            <th>Película</th>
+            <th>Año</th>
+            <th>Calificación</th>
+        </tr>
+        <tr>
+            <td>Up</td>
+            <td>2009</td>
+            <td>PG</td>
+        </tr>
+        <tr>
+            <td>Matrix</td>
+            <td>1999</td>
+            <td>R</td>
+        </tr>
+    </table>
+
+    <!--La tabla se puede separar en cabecera y cuerpo, con etiquetas thead y tbody-->
+    <!-- tr para fila, th para encabezado, td para contenido normal-->    
+
+    <video src="monkey2.mp4" controls></video>
+    <!--Atributos src y controls-->
+
+    <video src="monkey2.mp4" autoplay loop muted></video>
+    <!--Esto permite que el video se reproduzca automáticamente-->
+
+
+    <!--Introducción de formularios (INTERACCION CON EL USUARIO)
+    los primeros atributos indican la clase de formulario-->
+
+    <input type="text" name="first_name">
+
+    <input type="number" name="age">
+    
+    <input type="password" name="password">
+    
+    <input type="date" name="fecha">
+
+    <input type="color" name="text_color">
+
+    <input type="radio" name="font" value="bold" id="bold"> <!--value: valor real, nombre que captura lo que pone el usuario (font puede ser bold o normal); mientras que id indica cómo identificar a la opción-->
+    <label for="bold"><strong>Negrita</strong></label>
+    <input type="radio" name="font" value="normal" id="normal"> <!--Name tiene que ser igual en ambos inputs-->
+    <label for="normal">Normal</label>
+
+    <input type="checkbox" name="accept" id="accept">
+    <label for="accept">Estoy de acuerdo</label>
+
+    <textarea name="comment" cols="20" rows="3"></textarea> <!--Casilla de texto-->
+
+    <!--Lista para seleccionar-->
+    <select name="snack">
+        <option>Almonds</option>
+        <option>Cheese and Crackers</option>
+        <option>Pita and Hummus</option>
+        <option>Pears</option>
+    </select>
+
+
+    
+
+
+
+    <!--Los 4 elementos anteriores aparecen en orden horizontal, de izquierda a derecha
+    Idealmente, los formularios deben ir englobados en la etiqueta form-->
+
+
+
+    
+
+</body>
+</html>
+
+<!-- Colocar ! y luego tab, genera todo lo anterior. Coloca una estructura por defecto-->

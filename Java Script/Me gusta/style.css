@@ -1,0 +1,86 @@
+* {
+    font-family: 'Calibri';
+}
+
+#encabezado {
+    background-color: black;
+    color: white;
+    font-size: xx-large;
+    padding: 1%; margin: 0 22%;
+}
+
+h1 {
+    text-align: center;
+}
+
+#cuerpo {
+    display: flex;
+    flex-direction: row;
+    margin: 0 22%;
+}
+
+#avatar {
+    flex: 1;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#paneles_derechos {
+    flex: 3;
+    margin-left: 5%;
+}
+
+#avatar, .panel {
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.panel {
+    margin-bottom: 3%;
+    height: 150px;
+}
+
+.top {
+    margin: 3% 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.likes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 180px;
+    font-weight: bold;
+}
+
+button {
+    background-color: rgb(253, 231, 62);
+    width: 80px; height: 30px;
+    box-shadow: 2px 2px black;
+    font-size: large;
+}
+
+.descripcion {
+    margin: 0 5%;
+}
+
+.texto_azul {
+    color: blue;
+    text-decoration: underline;
+}
+
+.nombre {
+    font-size: large;
+    font-weight: bold;
+}
+
+img {
+    height: 120px; width: 120px;
+    margin-bottom: 5%;
+}
