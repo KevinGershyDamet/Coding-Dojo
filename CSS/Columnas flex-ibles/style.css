@@ -1,0 +1,19 @@
+.row {
+    width: 800px; height: 300px;
+    background-color: black;
+    display: flex;
+}
+
+.col, .col-2, .col-3 {
+    background-color: white;
+    margin: 2%;
+    flex: 1;
+}
+
+.col-2 {
+    flex: 2;
+}
+
+.col-3 {
+    flex: 3;
+}

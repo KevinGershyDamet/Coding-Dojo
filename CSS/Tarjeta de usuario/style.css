@@ -1,0 +1,50 @@
+body {
+    position: absolute;
+    left: 600px; top: 100px;
+}
+
+.tarjeta {
+    border: 3px solid gray;
+    height: 350px; width: 600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecera {
+    background-color: gray;
+    flex: 1;
+    margin: -1px;
+}
+
+.cuerpo {
+    background-color: rgb(252, 235, 215);
+    flex: 2;
+    padding: 2%; margin: -1px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-end;
+}
+
+.icono {
+    margin-right: 3px;
+    height: 20px; width: 20px;
+}
+
+#lugar {
+    height: 25px;
+}
+
+.perfil {
+    height: 100px; width: 100px;
+    position: absolute;
+    top: 63px; left: 30px;
+}
+
+.ajustes {
+    display: flex;
+    align-items: center;
+    color: blue;
+    text-decoration: underline;
+}
+

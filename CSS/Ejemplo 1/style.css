@@ -1,0 +1,131 @@
+h1 {
+    color: burlywood;
+    font-size: 50px;
+    background-color: red;
+}
+
+/*El nombre directo hace alusión a la etiqueta*/
+
+.alternativo {
+    background-color: blue;
+    color: white; 
+}
+
+/*El punto permite seleccionar una clase de etiqueta
+Se puede dejar el cursor en CSS y se mostrará la especifidad del selector*/
+
+#otro {
+    color: yellow;
+}
+
+button {
+    background-color: rgb(18, 131, 18);
+    border-color: rgb(18, 131, 18);
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+[href] {
+    color: pink; /*Entender cómo funciona este selector - ¿se aplica a lo que
+    tenga href? SI*/
+}
+
+* {
+    outline: 1px solid red;
+}
+/* selecciona todo y les da un contorno rojo*/
+
+
+.parr p {
+    color: red;
+} /*se selecciona una etiqueta hija de otra con la clase especificada ¡También selecciona nietos!*/
+
+.parr > p {
+    color: red; /*selecciona al descendiente directo (si hay otros iguales más adentro, no los considera*/
+}
+
+a,button {
+    background-color: black;
+} /*¡se pueden seleccionar varios a la vez!
+
+/*
+El selector
+
+A+B {} selecciona los elementos B que le siguen a los elementos A
+
+A ~ B selecciona lo mismo que el anterior pero todos los siguientes en vez de solo
+el adyacente 
+
+orange:first-child selecciona solo el primer elemento naranja
+
+apple,pickle:only-child
+
+(plate > apple,pickle):only-child
+
+plate,bento > pickle
+
+plate >
+lo anterior selecciona todo en un plato (también se puede colocar un * luego de >)
+
+plate > apple, plate > pickle
+
+:nth-child(3) 
+el tercer hijo
+
+:nth-last-child(2)
+el 2do deste atrás
+
+bento:nth-last-child(3)
+de un tipo en particular
+
+apple:first-of-type
+
+:nth-of-type(even)
+todos los pares
+
+:nth-of-type(5n+2)
+comienza a contar desde ahí
+
+apple:only-of-type
+selecciona si es el único elemento de ese tipo dentro de una división o etiqueta
+
+orange,apple:last-of-type es diferente de
+orange:last-of-type,apple:last-of-type
+
+bento:empty
+selecciona los bentos vacíos
+
+apple:not(.small)
+
+[for]
+plate[for]
+[for="Vitaly"]
+[for^="Sa"]  esto aplica para todos los nombres que empiecen por "Sa"
+[for$="ato"] todos los que terminan en ato
+[for*="obb"] todos los que contienen obb
+
+
+
+
+
+/*también se pueden combinar selectores div#game p.parr - ¡Solo poner uno detrás del otro!
+Si hay una clase, el punto debe ir pegado a la anterior palabra */
+
+/*los atributos se seleccionan con corchetes una vez que se coloca la etiqueta, por
+ejemplo input[type="text"] */
+
+
+/*
+
+text-align: center, left, right
+text-decoration: underline, line-through, none
+font-style: italic, normal
+font-weight: bold,normal,light ¡también acepta valores numéricos!
+font-family:serif, sans-serif, monospace, cursive
+
+
+
+overflow: scroll; permite añadir una barra para deslizar hacia abajo el contenido
+
+border-radius permite que las esquinas sean redonditas

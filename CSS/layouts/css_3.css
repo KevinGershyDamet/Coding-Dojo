@@ -1,0 +1,24 @@
+#container{
+	background-color: grey;
+	width:960px;
+	/*overflow: hidden;
+	height: auto;*/
+}
+#box-1, #box-2, #box-3{
+	background-color: green;
+	height: 200px;
+	width: 200px;
+	border: 1px solid black;
+	margin: 20px; /*comienza con top y va en sentido horario. Poner uno solo vale por
+	los dos lados del mismo sentido. Recordemos que los márgenes verticales colapsan, pero 
+	NO los horizontales*/
+	padding: 20px;
+}
+#box-1, #box-2, #box-3{
+	float:right; /*hace que se vayan lo más a la derecha posible*/
+	/*si se manda todo a flotar, el contenedor colapsa y ya no ocupa espacio*/
+}
+
+.clear{
+	clear: both; /*hace que el bloque se expanda hacia sus dos lados*/
+}

@@ -1,0 +1,34 @@
+#search {
+    display: block;
+    color: rgb(43, 204, 180);
+    height: 40px; width: 150px;
+    background-color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px; /*los pixeles hacen que se vea como un rectángulo ovalado*/
+}
+
+#plus {
+    display: block;
+    background-color: rgb(43, 204, 180);
+    color: white;
+    font-size: 25px;
+    margin: 30px 0;
+    height: 40px; width: 40px;
+    border-radius: 50%; /*el porcentaje hace que se vuelva circular desde la raíz*/
+    box-shadow: ;
+}
+
+#plus, #search {
+    border-color: rgb(43, 204, 180);
+}
+
+#account {
+    display: block;
+    background-color: rgb(42, 102, 213);
+    color: white;
+    height: 40px; width: 200px;
+    font-size: 20px;
+    border: 3px solid black;
+    box-shadow: 5px 5px black;
+}
