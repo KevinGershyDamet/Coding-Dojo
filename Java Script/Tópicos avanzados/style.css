@@ -1,0 +1,8 @@
+button {
+    margin-left: 50px;
+    transition: 500ms;
+}
+
+.rojo {
+    background-color: red;
+}

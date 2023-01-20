@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="cabecera">
+        <ul id="nav_izq">
+            <li><img src="option-i-bootstrap/logo.png" alt="logo"></li>
+            <li id="seleccionado">Home</li>
+            <li>Documentation</li>
+            <li>Examples</li>
+            <li>Themes</li>
+            <li>Expo</li>
+            <li>Blog</li>
+        </ul>
+
+        <ul id="nav_der">
+            <li><select id="version" onchange="cambio_version(this)">
+                    <option value="v4.3">v4.3</option>
+                    <option value="v3.0">v3.0</option>
+                </select>
+            </li>
+            <li><img src="option-i-bootstrap/ico-git.png" alt="git"></li>
+            <li><img src="option-i-bootstrap/ico-twitter.png" alt="twitter"></li>
+            <li><img src="option-i-bootstrap/ico-slack.png" alt="slack"></li>
+            <li><img src="option-i-bootstrap/ico-coll.png" alt="coll"></li>
+            <li><button class="boton_cabecera" onclick="alert('The download is about to start')">Download</button></li>
+            <li><button class="boton_cabecera" onclick="sesion(this)">LogIn</button></li>
+        </ul>
+    </div>
+
+    <div id="cuerpo">
+        <div id="descripcion">
+            <h1>Bootstrap</h1>
+            
+            <p id="texto_principal">Build responsive, mobile-first projects on the web with the world's most popular front-end component library.<br><br>Bootstrap is an open source toolkit for developing with HTML, CSS, and JS. Quickly prototype your ideas or build your entire app with our Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful plugins built on jQuery.</p>
+
+            <div id="botones">
+                <button class="boton_principal" id="btn_izq" onclick="alert('We will start soon!')">Get started</button>
+                <button class="boton_principal" id="btn_der" onclick="alert('The download is about to start')">Download</button>
+            </div>
+
+            <span>Currently <span class="version_actual">v4.3.1</span></span>
+
+            <div class="bloque_gris" id="segment">
+                <img src="option-i-bootstrap/ad-segment.png" alt="segment">
+                
+                <p class="texto_segment">Collect customer data once with a single API. Power your entire tech stack. <br><span>ads via Carbon</span></p>
+            </div>
+        </div>
+
+        <img src="option-i-bootstrap/main_img.png" alt="imagen principal">
+    </div>
+
+    <div id="opciones">
+        <div class="opcion bloque_gris">
+            <img src="option-i-bootstrap/ico-install.png" alt="instalar">
+
+            <h1>Installation</h1>
+
+            <p>Include Bootstaps's source Sass and JavaScript files via npm, Composer on Meteor. Package managed installs don't include documentation, but do include our built system and readme.</p>
+
+            <p><span class="texto_dolar">$</span> npm <span class="texto_verde">install</span> bootstrap</p>
+
+            <p><span class="texto_dolar">$</span> gem <span class="texto_verde">install</span> bootstrap <span class="texto_verde">-v</span> <span class="version_actual">4.3.1</span></p>
+
+            <div class="linea"></div>
+
+            <button class="boton_opciones" onclick="alert('You are about to read the docs')">Read installation docs</button>
+        </div>
+
+        <div class="opcion bloque_gris">
+            <img src="option-i-bootstrap/ico-cdn.png" alt="nube">
+
+            <h1>BootstrapCDN</h1>
+
+            <p>When you only need to include Bootstrap's compiled CSS or JS, you can use <span class="texto_azul">BootstrapCDN</span>.</p>
+
+            <h2>CSS only</h2>
+
+            <p class="enlaces"><span class="texto_azul">&#60;link</span><span class="texto_celeste"> rel=</span><span class="texto_rojo">"stylesheet"</span><span class="texto_celeste"> href=</span><span class="texto_rojo">"http://descargacssymascosasademas.com"</span><span class="texto_azul">&#62;</span></p>
+
+            <h2>JS, Popper.js, and jQuery</h2>
+            
+            <p class="enlaces">
+                <span class="texto_azul">&#60;script</span><span class="texto_celeste"> src=</span><span class="texto_rojo">"http://code.jquery.amazing.com"</span><span class="texto_azul">&#62;&#60;/script&#62;</span><br>
+                <span class="texto_azul">&#60;script</span><span class="texto_celeste"> src=</span><span class="texto_rojo">"http://cdnjs.cloudfiles.com"</span><span class="texto_azul">&#62;&#60;/script&#62;</span><br>
+                <span class="texto_azul">&#60;script</span><span class="texto_celeste"> src=</span><span class="texto_rojo">"http://stackpath_is_amazing.com"</span><span class="texto_azul">&#62;&#60;/script&#62;</span>
+            </p>
+
+            <div class="linea"></div>
+
+            <button class="boton_opciones" onclick="alert('You are about to explore the docs')">Explore the docs</button>
+        </div>
+
+        <div class="opcion bloque_gris">
+            <img src="option-i-bootstrap/ico-themes.png" alt="rayo">
+
+            <h1>Official Themes</h1>
+
+            <p>Take Bootstrap 4 to the next level with official premium themes - toolkits built on Bootstrap with new components and plugins, docs, and build tools.</p>
+
+            <img src="option-i-bootstrap/theme_img.png" alt="escritorio">
+
+            <div class="linea"></div>
+            
+            <button class="boton_opciones" onclick="alert('You are about to browse the themes')">Browse themes</button>
+        </div>
+    </div>
+
+    <div id="detalles" class="bloque_gris">
+        <ul class="texto_negrita" id="redes">
+            <li>GitHub</li>
+            <li>Twitter</li>
+            <li>Examples</li>
+            <li>About</li>
+        </ul>
+
+        <p>Designed and built with all the love in the world by the <span class="texto_negrita">Bootstrap team</span> with the help of <span class="texto_negrita">our contributors.<br></span>Currently <span class="version_actual">v4.3.1</span>. Code licensed <span class="texto_negrita">MIT</span>, docs <span class="texto_negrita">CC BY 3.0.</span></p>
+    </div>
+</body>
+</html>

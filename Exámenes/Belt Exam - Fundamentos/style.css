@@ -1,0 +1,201 @@
+* {
+    font-family: 'Calibri';
+
+    /* Restablecimiento de CSS */
+    padding: 0; 
+    margin: 0; 
+}
+
+/******************* Cabecera y listas *******************/
+
+#cabecera {
+    background-color: #563D7C;
+    margin: 0% 10%; padding: 0.5% 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav_izq, #nav_der, #redes {
+    list-style: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 8%;
+}
+
+li {
+    margin-right: 4%;    
+}
+
+#seleccionado {
+    font-weight: bold;
+}
+
+.boton_cabecera {
+    height: 30px; width: 100px;
+    color: yellow;
+    background-color: #563D7C;
+    border: 1px solid yellow;
+    border-radius: 5px;
+}
+
+#version {
+    background-color: #563D7C;
+    color: white;
+    border: 1px solid #563D7C;
+}
+
+/******************* Cuerpo *******************/
+
+#cuerpo {
+    display: flex;
+    flex-direction: row;
+    margin: 3% 15%;
+}
+
+.boton_principal {
+    height: 50px; width: 170px;
+    font-size: large;
+    border-radius: 5px;
+    background-color: white;
+    margin: 2% 0;
+}
+
+#btn_izq {
+    color: rgb(97, 47, 144);
+    border: 2px solid rgb(97, 47, 144);
+}
+
+#btn_der {
+    color: gray;
+    border: 2px solid gray;
+    margin-left: 2%;
+}
+
+.bloque_gris {
+    background-color: rgb(247, 246, 246);
+    border-radius: 5px;
+}
+
+#segment {
+    width: 350px;
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+    border-radius: 5px;
+    margin-top: 3%;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 1%;
+    color: rgb(97, 47, 144);
+}
+
+#texto_principal {
+    font-size: large;
+    color: gray;
+}
+
+.texto_segment {
+    margin-left: 3%;
+}
+
+span {
+    color: gray;
+}
+
+.texto_azul {
+    color: rgb(0, 98, 255);
+}
+
+#descripcion > *, .opcion > * {
+    margin-bottom: 20px;
+}
+
+/******************* Opciones de instalación *******************/
+
+#opciones {
+    margin: 0% 10%;
+    display: flex;
+    flex-direction: row;
+}
+
+.opcion {
+    flex: 1;
+    padding: 3%;
+    margin-right: 1%;
+}
+
+.opcion:nth-child(3) {
+    margin-right: 0%;
+}
+
+.boton_opciones {
+    height: 40px; width: 150px;
+    border-radius: 5px;
+    background-color: rgb(247, 246, 246);
+    color: rgb(0, 157, 255); 
+    border: 2px solid rgb(0, 157, 255);
+}
+
+.linea {
+    width: 100px; height: 10px;
+    background-color: rgb(247, 246, 246);
+    border-bottom: 1px solid rgb(183, 178, 178);
+    margin-bottom: 10%;
+}
+
+.bloque_gris > h1 {
+    color: black;
+    font-size: xx-large;
+}
+
+.texto_dolar {
+    color: rgb(97, 47, 144);
+}
+
+.texto_verde {
+    color: green;
+}
+
+.texto_rojo {
+    color: red;
+}
+
+.texto_celeste {
+    color: lightskyblue;
+}
+
+.enlaces {
+    width: 280px;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+/******************* Detalles *******************/
+
+#detalles {
+    height: 150px;
+    margin: 1% 10%;
+    color: gray;
+    padding-left: 3%;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#redes {
+    color: rgb(86, 86, 86);
+    margin-bottom: 1.5%;
+}
+
+.texto_negrita {
+    color: rgb(86, 86, 86);
+    font-weight: bold;
+}
+

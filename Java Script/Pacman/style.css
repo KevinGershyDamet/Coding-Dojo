@@ -1,0 +1,56 @@
+
+/************************ Pacman ************************/
+
+.pacman {
+    height: 0; width: 0;
+    border: 25px solid yellow;
+    border-radius: 100%;
+    position: absolute;
+    top: 5px; left: 5px;
+}
+
+.comida_right {
+    border-right: 25px solid transparent;
+}
+
+.comida_left {
+    border-left: 25px solid transparent;
+}
+
+.comida_up {
+    border-top: 25px solid transparent;
+}
+
+.comida_down {
+    border-bottom: 25px solid transparent;
+}
+
+/************************ Mundo ************************/
+
+.vacio {
+    background-color: black;
+    height: 50px; width: 50px;
+}
+
+.pared {
+    background-color: white;
+    height: 50px; width: 50px;
+}
+
+.simple {
+    background-color: yellow;
+    border-radius: 50px;
+    height: 30px; width: 30px;
+}
+
+.cereza {
+    background-color: red;
+    border-radius: 50px;
+    height: 30px; width: 30px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
