@@ -1,0 +1,51 @@
+#contenedor {
+    height: 650px; width: 300px;
+    background-color: gray;
+    padding: 20px 50px;
+    color: white;
+}
+
+label, input, select { 
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+input, select {
+    width: 260px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+button {
+    height: 30px; width: 100px;
+    margin-top: 30px;
+}
+
+#seleccion {
+    display: flex;
+    flex-direction: row;
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.ente {
+    width: 90px;
+}
+
+#marco_texto {
+    height: 300px; width: 300px;
+    border: solid 2px black;
+    padding: 2%;
+}

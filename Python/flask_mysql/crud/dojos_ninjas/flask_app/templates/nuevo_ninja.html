@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir nuevo ninja</title>
+</head>
+<body>
+    <h1>Creación de nuevo Ninja:</h1>
+
+    <form action="/agregar_ninja" method="post">
+
+        <label>Dojo:</label>
+        <select name="seleccion_dojo">
+            {% for x in dojos_existentes: %}
+                <option value="{{x['id']}}">{{x['name']}}</option>
+            {% endfor %}
+        </select>
+
+        <label>Nombre:</label>
+        <input type="text" name="first_name">
+
+        <label>Apellido:</label>
+        <input type="text" name="last_name" id="">
+
+        <label>Edad:</label>
+        <input type="text" name="age" id="">
+
+        <button type="submit">Añadir</button>
+
+    </form>
+
+    <a href="/dojos">Home</a>
+</body>
+</html>

@@ -1,0 +1,76 @@
+use lead_gen_business;
+
+select sum(amount)
+from billing
+where charged_datetime >= '2012/03/01' and charged_datetime <= '2012/03/31';
+
+select sum(amount)
+from billing
+where client_id = 2;
+
+select domain_name
+from sites
+where client_id = 10;
+
+select count(domain_name) as cantidad_creada, monthname(created_datetime) as mes, year(created_datetime) as año
+from sites
+where client_id = 1
+group by mes, año;
+
+select count(domain_name) as cantidad_creada, monthname(created_datetime) as mes, year(created_datetime) as año
+from sites
+where client_id = 20
+group by mes, año;
+
+select sites.domain_name as Sitio_web, count(leads.first_name) as Num_clientes
+from sites
+join leads on sites.site_id = leads.site_id
+where leads.registered_datetime >= '2011/01/01' and leads.registered_datetime <= '2011/02/15'
+group by sites.domain_name;
+
+select concat(clients.first_name, ' ', clients.last_name) as Cliente, count(leads.first_name) as Num_clientes
+from sites
+join leads on sites.site_id = leads.site_id
+join clients on sites.client_id = clients.client_id
+where leads.registered_datetime >= '2011/01/01' and leads.registered_datetime <= '2011/12/31'
+group by clients.client_id;
+
+select concat(clients.first_name, ' ', clients.last_name) as Cliente, count(leads.first_name) as Num_clientes, 
+monthname(leads.registered_datetime) as Mes
+from sites
+join leads on sites.site_id = leads.site_id
+join clients on sites.client_id = clients.client_id
+where leads.registered_datetime >= '2011/01/01' and leads.registered_datetime <= '2011/06/30'
+group by clients.client_id, Mes;
+
+select concat(clients.first_name, ' ', clients.last_name) as Cliente, 
+sites.domain_name as Sitio, count(leads.first_name) as Num_clientes
+from sites
+join leads on sites.site_id = leads.site_id
+join clients on sites.client_id = clients.client_id
+where leads.registered_datetime >= '2011/01/01' and leads.registered_datetime <= '2011/12/31'
+group by clients.client_id, Sitio;
+
+select concat(clients.first_name, ' ', clients.last_name) as Cliente, 
+sites.domain_name as Sitio, count(leads.first_name) as Num_clientes
+from sites
+join leads on sites.site_id = leads.site_id
+join clients on sites.client_id = clients.client_id
+group by clients.client_id, Sitio;
+
+select concat(clients.first_name, ' ', clients.last_name) as Cliente, sum(billing.amount) as Recaudado,
+month(billing.charged_datetime) as Mes, year(billing.charged_datetime) as Año
+from clients
+join billing on clients.client_id = billing.client_id
+group by Cliente, Mes, Año;
+
+select concat(clients.first_name, ' ', clients.last_name) as Cliente, sum(billing.amount) as Recaudado,
+monthname(billing.charged_datetime) as Mes, year(billing.charged_datetime) as Año
+from clients
+join billing on clients.client_id = billing.client_id
+group by Cliente, Mes, Año;
+
+select concat(clients.first_name, ' ', clients.last_name) as Cliente, group_concat(' ', sites.domain_name) as Sitios
+from clients
+join sites on clients.client_id = sites.client_id
+group by Cliente;

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de números</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='/style.css')}}">
+</head>
+<body>
+    <div id="contenedor">
+        <h1>¡Bienvenido al juego de adivinar números!</h1>
+
+        <h2>Estoy pensando en un número del 1 al 100...<br>¡adivina cuál es!</h2>
+
+        {% if session['intentos'] < 5 and session['color'] != 'green': %}
+            <form action="/procesamiento" method="post">
+                <label>Indica tu estimado aquí:</label>
+                <input type="number" name="adivinado">
+                <button type="submit">Adivinar</button>
+            </form>
+        {% endif %}
+
+        <p>Llevas {{session['intentos']}} intentos</p>
+
+        {% if 'adivinado' in session: %}
+            <div class="resultado" style="background-color: {{session['color']}}">{{session['comparación']}}</div>
+
+            {% if session['color'] == 'green' or session['comparación'] == '¡Perdiste!': %}
+
+                <form action="/destroy_session">
+                    <button type="submit">Jugar de nuevo</button>
+                </form>
+            
+            {% endif %}
+
+            {% if session['color'] == 'green': %}
+
+                <form action="/procesamiento_2" method="post">
+                    <label>Nombre:</label>
+                    <input type="text" name="nombre">
+
+                    <button type="submit">Guardar registro</button>
+                </form>
+            
+            {% endif %}
+
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+use mydb;
+
+insert into users (first_name, last_name, email)
+values ('Kev', 'G-D', 'kevin.gd@gmail.com'), ('Eduardo', 'TL', 'eduardazo@hotmail.com'),
+('Yoni', 'Derivada', 'derivadas@gmail.com'), ('Ricardo', 'Caver', ''), ('Ana', 'Beta', 'abeta@hotmail.com'),
+('Yuli', 'Varianza', '');
+
+insert into amistades (usuario_id, amistad_id)
+values (1, 2), (1, 4), (1, 6), (2, 1), (2, 3), (2, 5), (3, 2), (3, 5), (4, 3), (5, 1), (5, 6), (6, 2), (6, 3);
+
+insert into amistades (usuario_id, amistad_id) 
+select amistad_id, usuario_id
+from amistades;
+
+select concat(users.first_name, ' ', users.last_name) as Usuario, concat(users2.first_name, ' ', users2.last_name) as Amistad
+from users
+join amistades on users.id = amistades.usuario_id
+join users as users2 on amistades.amistad_id = users2.id;
+
+select concat(users.first_name, ' ', users.last_name) as Usuario, concat(users2.first_name, ' ', users2.last_name) as Amistad
+from users
+join amistades on users.id = amistades.usuario_id
+join users as users2 on amistades.amistad_id = users2.id
+where users2.id = 1;
+
+select count(id)/2 from amistades;
+
+select usuario_id, count(amistad_id) as num_amigos
+from amistades
+group by usuario_id;
+
+select concat(users.first_name, ' ', users.last_name) as Usuario, concat(users2.first_name, ' ', users2.last_name) as Amistad
+from users
+join amistades on users.id = amistades.usuario_id
+join users as users2 on amistades.amistad_id = users2.id
+where users.id = 2;
+
+select concat(users.first_name, ' ', users.last_name) as Usuario, concat(users2.first_name, ' ', users2.last_name) as Amistad
+from users
+join amistades on users.id = amistades.usuario_id
+join users as users2 on amistades.amistad_id = users2.id
+where users.id = 3
+order by Amistad;

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='/style.css')}}">
+</head>
+<body>
+    <h1>Registro de campeones:</h1>
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Intentos</th>
+        </thead>
+        <tbody>
+            <td>{{session['name']}}</td>
+            <td>{{session['intentos']}}</td>
+        </tbody>
+    </table>
+
+    <form action="/destroy_session" method="get">
+        <button type="submit">Volver al juego</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='/style.css')}}">
+</head>
+<body>
+    
+    <div id="marco_texto">
+        <h3>Aquí el resumen de tus datos:</h3>
+
+        <p>Nombre: {{session['name']}}</p>
+        <p>Eres un: {{session['check']}}</p>
+        <p>Tu correo es: {{session['email']}}</p>
+        <p>Hablas: {{session['idioma']}}</p>
+        <p>Vienes de: {{session['país']}}</p>
+    </div>
+
+</body>
+</html>

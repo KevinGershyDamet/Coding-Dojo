@@ -1,0 +1,4 @@
+
+1/ El esquema de MySQL se llama 'mydb'; y no 'first_flask'. No tener identificado el nombre correctamente hace que al abrir la página web aparezca un error
+
+2/ La tabla debe referenciarse correctamente

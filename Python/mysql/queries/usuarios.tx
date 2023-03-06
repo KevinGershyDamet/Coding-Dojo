@@ -1,0 +1,34 @@
+use mydb;
+
+insert into usuarios (name, last_name, email)
+values ('Ana', 'Ascuas', 'ana.ascuas@gmail.com');
+
+insert into usuarios (name, last_name, email)
+values ('Beto', 'Cuevas', 'beto.cuevas@gmail.com');
+
+insert into usuarios (name, last_name, email)
+values ('Charly', 'Cocodrilo', 'chacoco@gmail.com');
+
+select * from usuarios;
+
+select * from usuarios
+where email != ''
+limit 1;
+
+select * from usuarios
+order by id desc
+limit 1;
+
+update usuarios
+set last_name = 'Panqueques'
+where id = 3;
+
+delete
+from usuarios
+where id = 2;
+
+select * from usuarios
+order by name;
+
+select * from usuarios
+order by name desc;

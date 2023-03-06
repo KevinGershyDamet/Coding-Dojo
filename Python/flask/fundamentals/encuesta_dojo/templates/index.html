@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='/style.css')}}">
+</head>
+<body>
+    
+    <div id="contenedor">
+    
+        <h1>Encuesta del dojo:</h1>
+
+        <form action="/procesamiento" method="post">
+
+            <label>Nombre:</label>
+            <input type="text" name="nombre">
+
+            <label>Correo:</label>
+            <input type="text" name="email">
+
+            <label>Idioma:</label>
+            <select name="idioma">
+                <option value="español">Español</option>
+                <option value="francés">Francés</option>
+                <option value="inglés">Inglés</option>
+                <option value="japonés">Japonés</option>
+            </select>
+
+            <label>País:</label>
+            <select name="país">
+                <option value="Perú">Perú</option>
+                <option value="Francia">Francia</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Japón">Japón</option>
+            </select>
+
+            <h3>Eres un:</h3>
+
+            <div id="seleccion">
+                <div class="opcion">
+                    <label>Ser humano</label>
+                    <input type="radio" name="verifica" value="persona" class="ente">
+                </div>
+                <div class="opcion">
+                    <label>Alienígena</label>
+                    <input type="radio" name="verifica" value="alienígena" class="ente">
+                </div>
+                <div class="opcion">
+                    <label>Pokémon</label>
+                    <input type="radio" name="verifica" value="pokémon" class="ente">
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+
+        </form>
+    
+    </div>
+
+</body>
+</html>

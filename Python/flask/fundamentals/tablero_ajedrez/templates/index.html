@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablero de ajedrez</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <style>
+        .bloque {
+            background-color: {{color2}};
+        }
+
+        .fila:nth-of-type(odd) > .bloque:nth-of-type(odd) {
+            background-color: {{color1}};
+        }
+
+        .fila:nth-of-type(even) > .bloque:nth-of-type(even) {
+            background-color: {{color1}};
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>¡Ajedrez!</h1>
+
+    <div id="tablero">
+        
+    {% for j in range(0,y): %}
+        <div class="fila">
+        
+        {% for i in range(0,x): %}
+            <div class="bloque"></div>
+        {% endfor %}
+        
+        </div>
+
+    {% endfor %}    
+    
+</div>
+
+</body>
+</html>

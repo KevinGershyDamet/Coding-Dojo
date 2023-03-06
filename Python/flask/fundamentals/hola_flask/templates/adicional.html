@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicional</title>
+</head>
+<body>
+    <h1>Números cualesquiera</h1>
+    <ul>
+        {% for x in numeros: %}
+            <li>{{x}}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>Vehículos</h1>
+    <table>
+        
+        <tr>
+            <td>Marca</td>
+            <td>Año</td>
+        </tr>
+
+        {% for x in carros: %}
+        <tr>
+            <td>{{x['marca']}}</td>
+            <td>{{x['año']}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

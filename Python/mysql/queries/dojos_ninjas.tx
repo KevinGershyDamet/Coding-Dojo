@@ -1,0 +1,32 @@
+use mydb;
+
+insert into dojos (nombre)
+values ('El súper dojo'), ('El mega dojo'), ('El recontra dojo');
+
+delete
+from dojos
+where id != '';
+
+insert into dojos (nombre)
+values ('El dojo genial'), ('El dojo alucinante'), ('El dojo espectacular');
+
+insert into ninjas (first_name, last_name, age, dojo_id)
+values ('Kev', 'G-D', 27, 4) , ('Shigeru', 'Miyamoto', 63, 4) , ('Roberto', 'Ferrari', 31, 4),
+('Melanie', 'Ima', 26, 5), ('Cecilia', 'Araoz', 33, 5), ('Norberto', 'Ñol', 51, 5),
+('Ricky', 'Varianza', 71, 6), ('Willy', 'Cotangente', 12, 6), ('Cuasimodo', 'Coseno', 40, 6);
+
+select ninjas.first_name, ninjas.last_name, ninjas.age, dojos.nombre
+from ninjas
+join dojos on ninjas.dojo_id = dojos.id
+where dojos.id = 4;
+
+select ninjas.first_name, ninjas.last_name, ninjas.age, dojos.nombre
+from ninjas
+join dojos on ninjas.dojo_id = dojos.id
+where dojos.id = 6;
+
+select ninjas.id, ninjas.first_name, ninjas.last_name, ninjas.age, dojos.nombre
+from ninjas
+join dojos on ninjas.dojo_id = dojos.id
+order by ninjas.id desc
+limit 1;

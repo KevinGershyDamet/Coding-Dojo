@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+<body>
+
+    <h1>Esta página se ha visualizado {{session['contador']}} veces</h1>
+
+    <form action="/modificar" method="post">
+        <label>Valor del incremento del contador:</label>
+        <input name ="incremento" type="number">
+
+        <button type="submit">Aplicar</button>
+    </form>
+
+    <form action="/adicionar" method="post">
+        <button type="submit">+
+            {% if 'incremento' in session: %}
+                {{session['incremento']}}
+            {% else: %}
+                2
+            {% endif %}
+        </button>
+    </form>
+
+    <form action="/destroy_session" method="post">
+        <button type="submit">reiniciar</button>
+    </form>
+
+</body>
+</html>
